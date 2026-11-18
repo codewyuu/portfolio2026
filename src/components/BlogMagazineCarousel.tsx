@@ -217,7 +217,7 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.12)] drop-shadow-[0_10px_24px_rgba(0,0,0,0.18)] transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="object-contain [filter:drop-shadow(0_2px_4px_rgba(0,0,0,0.12))_drop-shadow(0_10px_24px_rgba(0,0,0,0.18))] dark:[filter:drop-shadow(0_0_1px_rgba(255,255,255,0.28))_drop-shadow(0_0_18px_rgba(255,255,255,0.10))_drop-shadow(0_12px_28px_rgba(0,0,0,0.6))] transition-transform duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 70vw, (max-width: 1024px) 45vw, 33vw"
                   />
                 ) : (

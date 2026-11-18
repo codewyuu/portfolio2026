@@ -1,7 +1,7 @@
 'use client';
 
 import { Project } from '@/types/project';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 
 interface ProjectNavigationProps {
@@ -26,7 +26,7 @@ export const ProjectNavigation = ({ currentProject, allProjects }: ProjectNaviga
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href={`/projects/${previousProject.id}`}
+                to={`/projects/${previousProject.id}`}
                 className="group flex flex-col items-start touch-manipulation active:opacity-75"
                 style={{ 
                   WebkitTapHighlightColor: 'transparent',
@@ -55,7 +55,7 @@ export const ProjectNavigation = ({ currentProject, allProjects }: ProjectNaviga
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                href={`/projects/${nextProject.id}`}
+                to={`/projects/${nextProject.id}`}
                 className="group flex flex-col items-end touch-manipulation active:opacity-75"
                 style={{ 
                   WebkitTapHighlightColor: 'transparent',

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ChevronDown, ChevronUp, GitMerge } from 'lucide-react'
 import { fallbackContributions } from '@/lib/github'
@@ -103,7 +103,7 @@ export default function OpenSourceContributionsCard() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href={contribution.link}
+                    to={contribution.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="shrink-0 p-2 rounded-lg bg-neutral-200 border-2 border-neutral-500 dark:bg-neutral-800 dark:border-neutral-500 transition-all duration-300 group-has-hover:opacity-40 group-has-hover:group-hover/item:opacity-100"

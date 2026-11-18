@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { useEffect } from 'react'
 import NeumorphButton from './NeumorphButton'
 
@@ -108,10 +107,8 @@ export default function CallToAction({
               <NeumorphButton variant="glass" className="px-5 py-2.5 sm:py-2 text-sm sm:text-base text-white">
                 <div className="flex items-center gap-2.5 sm:gap-3">
                   <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full overflow-hidden shrink-0">
-                    <Image 
+                    <img 
                       alt={profileAlt} 
-                      width={28} 
-                      height={28} 
                       className="w-full h-full object-cover" 
                       src={profileImage}
                       style={{ color: 'transparent' }}

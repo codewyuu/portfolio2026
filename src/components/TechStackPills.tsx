@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// Remove Image since we'll use <img> for simplicity in Vite
 import { useState } from 'react'
 import NeumorphButton from './NeumorphButton'
 
@@ -42,11 +42,9 @@ export default function TechStackPills({ className = '' }: { className?: string 
               <NeumorphButton className="px-2.5 py-1 rounded-full sm:px-3.5 sm:py-2">
                 <span className="inline-flex items-center gap-1.5 sm:gap-2">
                   <span className="relative inline-flex items-center justify-center w-3.5 h-3.5 sm:w-5 sm:h-5">
-                    <Image
+                    <img
                       src={t.icon}
                       alt={t.name}
-                      width={18}
-                      height={18}
                       className="w-full h-full object-contain select-none"
                     />
                   </span>

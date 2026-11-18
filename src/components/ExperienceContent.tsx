@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Link } from 'react-router-dom'
+// Remove Image since we'll use <img> for simplicity in Vite
 import { ChevronDown, Globe, Linkedin } from 'lucide-react'
 import { Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 
@@ -78,11 +78,9 @@ export default function ExperienceContent() {
               {/* Logo (rounded square) */}
               <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-[10px] bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center overflow-hidden shrink-0 mt-0.5 ring-1 ring-neutral-300/50 dark:ring-neutral-700/60">
                 {exp.logoUrl ? (
-                  <Image
+                  <img
                     src={exp.logoUrl}
                     alt={exp.company}
-                    width={44}
-                    height={44}
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -101,7 +99,7 @@ export default function ExperienceContent() {
                       <h3 className="font-medium dark:text-white text-black text-[13px] sm:text-[15px] leading-none">
                         {exp.href ? (
                           <Link
-                            href={exp.href}
+                            to={exp.href}
                             target="_blank"
                             className="hover:text-[#0A84FF] transition-colors"
                           >
@@ -113,12 +111,12 @@ export default function ExperienceContent() {
                       </h3>
                       <div className="flex items-center gap-1">
                         {exp.website && (
-                          <Link href={exp.website} target="_blank" aria-label={`${exp.company} website`} className="opacity-60 hover:opacity-100 transition-opacity">
+                          <Link to={exp.website} target="_blank" aria-label={`${exp.company} website`} className="opacity-60 hover:opacity-100 transition-opacity">
                             <Globe className="w-3.5 h-3.5" />
                           </Link>
                         )}
                         {exp.linkedin && (
-                          <Link href={exp.linkedin} target="_blank" aria-label={`${exp.company} LinkedIn`} className="opacity-60 hover:opacity-100 transition-opacity">
+                          <Link to={exp.linkedin} target="_blank" aria-label={`${exp.company} LinkedIn`} className="opacity-60 hover:opacity-100 transition-opacity">
                             <Linkedin className="w-3.5 h-3.5" />
                           </Link>
                         )}

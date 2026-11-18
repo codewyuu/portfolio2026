@@ -7,7 +7,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 export const SponsorHeartIcon = ({ className }: { className?: string }) => (
   <svg
@@ -39,7 +39,7 @@ export default function SponsorButton({
       <TooltipTrigger asChild>
         <Button asChild className="p-0 bg-transparent hover:bg-transparent">
           <Link
-            href={href}
+            to={href}
             target="_blank"
             rel="noopener noreferrer"
             className="touch-manipulation"

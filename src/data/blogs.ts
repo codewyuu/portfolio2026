@@ -8,7 +8,7 @@ export const blogs: BlogPost[] = [
     externalUrl: '',
     author: 'Yuvraj Sharma',
     date: '2026-01-15',
-    image: '/mag1.jpg',
+    image: '/mag1a.png',
     tags: ['HawkWatch', 'Gemini 1.5 Flash', 'Video Surveillance', 'TensorFlow.js', 'Computer Vision'],
     content: `Welcome to this week’s deep dive into the rapidly evolving world of security technology. If you’ve ever wondered how artificial intelligence is reshaping surveillance and transforming static camera feeds into intelligent, proactive guardians, you’re in for a treat. Today, we explore HawkWatch, a cutting-edge AI surveillance system that promises to raise the bar for real-time threat detection, making our public and private spaces safer, smarter, and far more responsive.
 
@@ -59,7 +59,7 @@ Until next time, keep curious and safe!`
     externalUrl: '',
     author: 'Yuvraj Sharma',
     date: '2025-12-10',
-    image: '/mag2.jpg',
+    image: '/mag2a.png',
     tags: ['Vakeel AI', 'LegalTech', 'NLP', 'Semantic Search', 'Gemini'],
     content: [
       'Vakeel AI was designed to make legal research faster for lawyers and citizens by turning complex case repositories into queryable answers.',
@@ -81,7 +81,7 @@ Until next time, keep curious and safe!`
     externalUrl: '',
     author: 'Yuvraj Sharma',
     date: '2026-02-01',
-    image: '/mag3.jpg',
+    image: '/mag3a.png',
     tags: ['CurSlate', 'Chrome Extension', 'JavaScript', 'Babel', 'Performance'],
     content: [
       'CurSlate focused on one clear metric: deliver accurate translation previews fast enough to feel instant inside browsing flows.',

@@ -25,7 +25,7 @@ export default function ExperienceContent() {
 
   const experiences: ExperienceItem[] = [
     {
-      company: "CeptraLabs",
+      company: "Ceptra Labs",
       position: "Founding Engineer",
       duration: "September 2025 – January 2026",
       description: "Architected an AI-driven voice agent platform for financial advisory with real-time pipelines and secure, compliant workflows.",

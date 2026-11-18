@@ -208,7 +208,7 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
                   event.preventDefault()
                 }
               }}
-              className="group absolute left-0 top-0 block overflow-hidden rounded-xl border border-neutral-200/60 dark:border-neutral-800/70 bg-black/20 backdrop-blur-[1px] shadow-[0_14px_38px_rgba(0,0,0,0.28)] will-change-transform"
+              className="group absolute left-0 top-0 block will-change-transform"
               aria-label={`Open ${blog.title}`}
             >
               <div className="relative h-full w-full">
@@ -217,18 +217,12 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
                     src={blog.image}
                     alt={blog.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 70vw, (max-width: 1024px) 45vw, 33vw"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700" />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/15" />
-                <div className="absolute left-3 right-3 bottom-2.5">
-                  <p className="text-white/80 text-[11px] sm:text-xs">
-                    {blog.date} • {blog.readTime}
-                  </p>
-                </div>
               </div>
             </Link>
           )

@@ -38,7 +38,7 @@ export default function ExperienceContent() {
         "Engineered Next.js + Tailwind dashboards with autonomous regulatory filters and end‑to‑end encryption to achieve 100% SEBI/RBI compliance.",
       ],
       href: "",
-      logoUrl: "/stealth.png",
+      logoUrl: "/ceptra.png",
     },
   ]
 

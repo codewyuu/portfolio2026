@@ -41,7 +41,7 @@ export default function NewHeroSection() {
           <Reveal delay={0.2}>
             <ProfileHeader
               name="Yuvraj Sharma"
-              age="21"
+              age="22"
               title="research & opensource"
               profileImage="/pic8.jpeg"
               socialLinks={{

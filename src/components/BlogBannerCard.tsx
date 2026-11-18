@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-// Remove Image since we'll use <img> for simplicity in Vite
+import Link from 'next/link'
+import Image from 'next/image'
 import { BlogPost } from '@/types/blog'
 import { Link as LinkIcon, Bookmark } from 'lucide-react'
 
@@ -15,16 +15,18 @@ export default function BlogBannerCard({ blog, muted = false }: BlogBannerCardPr
 
   return (
     <Link
-      to={`/blogs/${blog.id}`}
+      href={`/blogs/${blog.id}`}
       className={`group block rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 transition-all duration-300 ${muted ? 'opacity-80' : 'hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_18px_42px_rgba(0,0,0,0.45)]'}`}
     >
       <div className={`relative h-28 sm:h-40 w-full rounded-2xl overflow-hidden`}>
         {blog.image ? (
-          <img
+          <Image
             src={blog.image}
             alt={blog.title}
-            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-            loading="lazy"
+            fill
+            className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 100vw, 100vw"
+            priority={false}
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700" />

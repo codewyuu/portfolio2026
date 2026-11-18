@@ -1,6 +1,6 @@
 'use client'
 
-// Remove Image since we'll use <img> for simplicity in Vite
+import Image from 'next/image'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { ModeToggle } from '@/components/theme-toggle'
@@ -243,13 +243,19 @@ export default function BannerSection({
           }}
         />
         {images.map((src, idx) => (
-          <img
+          <Image
             key={src}
             alt={`Banner ${idx + 1}`}
+            width={1240}
+            height={900}
             className={`rounded-none w-full h-[180px] sm:h-[270px] object-cover absolute inset-0 transition-opacity duration-700 ${idx === activeIndex ? 'opacity-100' : 'opacity-0'}`}
             src={src}
             style={{ color: 'transparent', minHeight: '100px', objectPosition: getObjectPosition(src) }}
+            priority={idx === 0}
             loading={idx === 0 ? 'eager' : 'lazy'}
+            fetchPriority={idx === 0 ? 'high' : 'low'}
+            sizes="(max-width: 640px) 100vw, 1240px"
+            quality={60}
           />
         ))}
         <div className="w-full h-[180px] sm:h-[270px]" />

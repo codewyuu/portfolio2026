@@ -3,8 +3,8 @@
 import EmptySponsorSlotCard from '@/components/EmptySponsorSlotCard';
 import SponsorButton, { SponsorHeartIcon } from '@/components/SponsorButton';
 import { Sponsor } from '@/types/sponsor';
-// Remove Image since we'll use <img> for simplicity in Vite
-import { Link } from 'react-router-dom';
+import Image from 'next/image';
+import Link from 'next/link';
 import { FaGithub, FaXTwitter } from 'react-icons/fa6';
 
 interface SponsorShowcaseProps {
@@ -44,9 +44,11 @@ export default function SponsorShowcase({
         <div className="flex flex-col gap-1">
           <div className="flex h-full flex-col gap-0.5 overflow-hidden rounded-[8px] border border-border p-1 select-none">
             <div className="h-20 w-20 overflow-hidden rounded-t-[6px] border border-border">
-              <img
+              <Image
                 src={sponsor.logo}
                 alt={sponsor.name}
+                width={80}
+                height={80}
                 className="h-full w-full object-cover"
                 style={{ color: 'transparent' }}
               />
@@ -67,7 +69,7 @@ export default function SponsorShowcase({
           <div className="flex w-full flex-col gap-1 rounded-[6px] border border-border p-1">
             {sponsor.github && (
               <Link
-                to={`https://github.com/${sponsor.github}`}
+                href={`https://github.com/${sponsor.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -79,7 +81,7 @@ export default function SponsorShowcase({
             )}
             {sponsor.twitter && (
               <Link
-                to={`https://x.com/${sponsor.twitter}`}
+                href={`https://x.com/${sponsor.twitter}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}

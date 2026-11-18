@@ -1,5 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface EmptySponsorSlotCardProps {
   sponsorUrl: string;
@@ -9,7 +9,7 @@ export default function EmptySponsorSlotCard({ sponsorUrl }: EmptySponsorSlotCar
   return (
     <div className="group/item relative flex h-full w-full items-center gap-3 rounded-[12px] border border-dashed border-border p-2 overflow-hidden">
       <Link
-        to={sponsorUrl}
+        href={sponsorUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="absolute inset-0 z-20 flex items-center justify-center bg-background/95 opacity-0 transition-opacity duration-300 group-hover/item:opacity-100"

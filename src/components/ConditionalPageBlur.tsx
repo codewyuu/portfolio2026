@@ -1,10 +1,10 @@
 'use client'
 
-import { Link, useLocation } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
 import GradualBlur from '@/components/GradualBlur'
 
 export default function ConditionalPageBlur() {
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const isBlogPostPage = pathname.startsWith('/blogs/')
 
   if (isBlogPostPage) {

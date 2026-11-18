@@ -1,6 +1,6 @@
 'use client'
 
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import DiagonalPattern from './DiagonalPattern'
 import BannerSection from './BannerSection'
 import ProfileHeader from './ProfileHeader'
@@ -112,7 +112,7 @@ export default function NewHeroSection() {
                     </div>
                   </div>
                   <div className="flex justify-center mt-4 sm:mt-5 mb-3 sm:mb-4">
-                    <Link to="/projects">
+                    <Link href="/projects">
                       <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
                         <span>View All</span>
                         <span>→</span>
@@ -136,7 +136,7 @@ export default function NewHeroSection() {
                     <BlogMagazineCarousel blogs={blogs} />
                   </div>
                   <div className="flex justify-center mt-4 sm:mt-5 mb-3 sm:mb-4">
-                    <Link to="/blogs">
+                    <Link href="/blogs">
                       <NeumorphButton className="inline-flex items-center gap-1 px-4 py-2 text-xs sm:text-sm text-neutral-800 dark:text-white/80 hover:text-neutral-900 dark:hover:text-white">
                         <span>View All</span>
                         <span>→</span>
@@ -149,6 +149,8 @@ export default function NewHeroSection() {
               <Reveal delay={0.05}>
                 <SectionBorder className="mt-0 pt-0" />
               </Reveal>
+
+              {/* Sponsors section removed as requested */}
 
               {/* GitHub Contributions */}
               <Reveal delay={0.1}>

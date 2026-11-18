@@ -1,6 +1,7 @@
 'use client'
 
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { Moon, Sun, House, ChevronLeft } from 'lucide-react'
 import * as React from 'react'
@@ -12,7 +13,7 @@ interface PageNavigationProps {
 
 export default function PageNavigation({ hideThemeToggle = false }: PageNavigationProps) {
   const { theme, setTheme } = useTheme()
-  const { pathname } = useLocation()
+  const pathname = usePathname()
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
@@ -28,7 +29,11 @@ export default function PageNavigation({ hideThemeToggle = false }: PageNavigati
       <div className="flex items-center gap-2 h-[32px]">
         <Tooltip>
           <TooltipTrigger asChild>
-            <Link to="/" className="h-7 w-7 inline-flex items-center justify-center text-black/80 dark:text-white/85 has-hover:hover:text-black dark:has-hover:hover:text-white transition-colors duration-200">
+            <Link
+              href="/"
+              className="h-7 w-7 inline-flex items-center justify-center text-black/80 dark:text-white/85 has-hover:hover:text-black dark:has-hover:hover:text-white transition-colors duration-200"
+              aria-label="Home"
+            >
               <House className="size-[15px]" strokeWidth={2.3} />
             </Link>
           </TooltipTrigger>
@@ -40,7 +45,7 @@ export default function PageNavigation({ hideThemeToggle = false }: PageNavigati
           <Tooltip>
             <TooltipTrigger asChild>
               <Link
-                to={backHref}
+                href={backHref}
                 className="h-7 w-7 inline-flex items-center justify-center text-black/80 dark:text-white/85 has-hover:hover:text-black dark:has-hover:hover:text-white transition-colors duration-200"
                 aria-label={backLabel}
               >

@@ -1,15 +1,16 @@
 import { BlogPost } from '@/types/blog'
 
-export const hawkwatch: BlogPost = {
-  id: 'hawkwatch-build-log',
-  title: 'HawkWatch: Revolutionizing Security with AI-Powered Real-Time Surveillance',
-  readTime: '8 min read',
-  externalUrl: '',
-  author: 'Yuvraj Sharma',
-  date: '2026-01-15',
-  image: '/mag1.jpg',
-  tags: ['HawkWatch', 'Gemini 1.5 Flash', 'Video Surveillance', 'TensorFlow.js', 'Computer Vision'],
-  content: `Welcome to this week’s deep dive into the rapidly evolving world of security technology. If you’ve ever wondered how artificial intelligence is reshaping surveillance and transforming static camera feeds into intelligent, proactive guardians, you’re in for a treat. Today, we explore HawkWatch, a cutting-edge AI surveillance system that promises to raise the bar for real-time threat detection, making our public and private spaces safer, smarter, and far more responsive.
+export const blogs: BlogPost[] = [
+  {
+    id: 'hawkwatch-build-log',
+    title: 'HawkWatch: Revolutionizing Security with AI-Powered Real-Time Surveillance',
+    readTime: '8 min read',
+    externalUrl: '',
+    author: 'Yuvraj Sharma',
+    date: '2026-01-15',
+    image: '/mag1.jpg',
+    tags: ['HawkWatch', 'Gemini 1.5 Flash', 'Video Surveillance', 'TensorFlow.js', 'Computer Vision'],
+    content: `Welcome to this week’s deep dive into the rapidly evolving world of security technology. If you’ve ever wondered how artificial intelligence is reshaping surveillance and transforming static camera feeds into intelligent, proactive guardians, you’re in for a treat. Today, we explore HawkWatch, a cutting-edge AI surveillance system that promises to raise the bar for real-time threat detection, making our public and private spaces safer, smarter, and far more responsive.
 
 Let’s face it: traditional surveillance systems have long been the silent watchers, recording hours of footage only to be reviewed after incidents happen. The manual monitoring is tedious, prone to human error, and often too slow for urgent response. HawkWatch changes the game by combining powerful AI, cloud-driven vision-language models, and smart local processing to alert security teams in near real-time about threats ranging from theft to medical emergencies.
 
@@ -50,4 +51,53 @@ Security systems are no longer just about watching, they’re about understandin
 Thank you for joining me in exploring this fascinating leap forward. Stay tuned for next week’s post where we’ll delve into the ethical considerations and privacy challenges of AI surveillance, and how innovators are striving to balance safety with personal freedom.
 
 Until next time, keep curious and safe!`
+  },
+  {
+    id: 'vakeel-ai-case-research-engine',
+    title: 'Inside Vakeel AI: Building Legal Search for 5.2 Crore+ Cases',
+    readTime: '4 min read',
+    externalUrl: '',
+    author: 'Yuvraj Sharma',
+    date: '2025-12-10',
+    image: '/mag2.jpg',
+    tags: ['Vakeel AI', 'LegalTech', 'NLP', 'Semantic Search', 'Gemini'],
+    content: [
+      'Vakeel AI was designed to make legal research faster for lawyers and citizens by turning complex case repositories into queryable answers.',
+      '',
+      'Core system choices:',
+      '',
+      '- NLP intent routing for legal-domain queries',
+      '- Semantic retrieval and ranking over Supreme, High, and District Court judgments',
+      '- AI-assisted drafting and summarization with Gemini-powered workflows',
+      '- Product architecture scaled for 50+ active users with consistent response quality',
+      '',
+      'This reduced legal documentation time by roughly 70% while keeping answers grounded in case context.'
+    ].join('\n')
+  },
+  {
+    id: 'curslate-performance-journey',
+    title: 'CurSlate Performance Journey: 40% Faster Browser Translation',
+    readTime: '3 min read',
+    externalUrl: '',
+    author: 'Yuvraj Sharma',
+    date: '2026-02-01',
+    image: '/mag3.jpg',
+    tags: ['CurSlate', 'Chrome Extension', 'JavaScript', 'Babel', 'Performance'],
+    content: [
+      'CurSlate focused on one clear metric: deliver accurate translation previews fast enough to feel instant inside browsing flows.',
+      '',
+      'Optimization work that mattered most:',
+      '',
+      '- Modular extension architecture for predictable runtime behavior',
+      '- Translation pipeline optimization to hit <300ms processing in common paths',
+      '- Auto language detection and responsive preview rendering near 0.2s',
+      '- Power-user controls for hover timing and keyboard-driven workflows',
+      '',
+      'Result: a smoother in-browser translation experience with about 40% faster performance than earlier builds.'
+    ].join('\n')
+  }
+]
+
+export const getBlogById = (id: string): BlogPost | undefined => {
+  return blogs.find(blog => blog.id === id)
 }

@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { BlogPost } from '@/types/blog'
-import { Link } from 'react-router-dom'
-// Remove Image since we'll use <img> for simplicity in Vite or handle public paths
+import Link from 'next/link'
+import Image from 'next/image'
 
 interface BlogCardProps {
   blog: BlogPost
@@ -16,10 +16,12 @@ export const BlogCard: FC<BlogCardProps> = ({ blog }) => {
     <article className="group/item cursor-pointer touch-manipulation rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white/60 dark:bg-neutral-900/35 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(0,0,0,0.12)] dark:hover:shadow-[0_18px_42px_rgba(0,0,0,0.38)]">
       <div className="relative h-40 sm:h-52 w-full">
         {blog.image ? (
-          <img
+          <Image
             src={blog.image}
             alt={blog.title}
-            className="object-cover w-full h-full transition-transform duration-500 ease-out group-hover/item:scale-[1.03]"
+            fill
+            className="object-cover transition-transform duration-500 ease-out group-hover/item:scale-[1.03]"
+            sizes="(max-width: 640px) 100vw, 768px"
           />
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700" />
@@ -45,7 +47,7 @@ export const BlogCard: FC<BlogCardProps> = ({ blog }) => {
 
   return (
     <Link 
-      to={`/blogs/${blog.id}`}
+      href={`/blogs/${blog.id}`}
       className="block w-full touch-manipulation active:opacity-75"
       style={{
         WebkitTapHighlightColor: 'transparent',

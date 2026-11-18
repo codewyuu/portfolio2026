@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
-// Remove Image since we'll use <img> for simplicity in Vite
+import Link from 'next/link'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { BlogPost } from '@/types/blog'
 
@@ -200,7 +200,7 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
               ref={(node) => {
                 itemRefs.current[idx] = node
               }}
-              to={`/blogs/${blog.id}`}
+              href={`/blogs/${blog.id}`}
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}
               onClick={(event) => {
@@ -213,10 +213,12 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
             >
               <div className="relative h-full w-full">
                 {blog.image ? (
-                  <img
+                  <Image
                     src={blog.image}
                     alt={blog.title}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-[1.04]"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 70vw, (max-width: 1024px) 45vw, 33vw"
                   />
                 ) : (
                   <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700" />

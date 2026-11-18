@@ -135,7 +135,6 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
     dragStateRef.current.startX = event.clientX
     dragStateRef.current.startY = event.clientY
     dragStateRef.current.moved = false
-    event.currentTarget.setPointerCapture(event.pointerId)
   }
 
   const handlePointerMove: React.PointerEventHandler<HTMLDivElement> = (event) => {
@@ -143,8 +142,10 @@ export default function BlogMagazineCarousel({ blogs }: BlogMagazineCarouselProp
     const delta = event.clientX - metricsRef.current.lastPointerX
     const totalDeltaX = Math.abs(event.clientX - dragStateRef.current.startX)
     const totalDeltaY = Math.abs(event.clientY - dragStateRef.current.startY)
-    if (totalDeltaX > 8 || totalDeltaY > 8) {
+    if (!dragStateRef.current.moved && (totalDeltaX > 8 || totalDeltaY > 8)) {
       dragStateRef.current.moved = true
+      // Capture only once a real drag begins so plain clicks still reach the card link
+      event.currentTarget.setPointerCapture(event.pointerId)
     }
     metricsRef.current.lastPointerX = event.clientX
     metricsRef.current.offset += delta * 1.3
